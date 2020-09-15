@@ -1,12 +1,15 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-//test
+
+
 const CommentSchema = new Schema(
   {
     id: Number,
+    name: String,
     user_id: Number,
     share_id: Number,
-    comment: String,
+    share: String,
+    photo: String,
     timestamp: String,
   },
   { 

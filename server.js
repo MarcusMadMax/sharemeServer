@@ -78,53 +78,6 @@ router.delete('/shares/:id', (req, res) => {
 	
 })
 
-//Titles C.R.U.D
-// router.post('/title', (req, res) => {
-//     var comment = new Comment()
-//     comment.id = Date.now()
-
-//     var data = req.body
-
-//     Object.assign(comment, data)
-//     comment.save()
-//     .then((comment) => {
-//         res.json(comment)
-//     }) // Create new comment
-// })
-// router.get('/title', (req, res) => {
-//     Comment.find()
-//     .populate('user')
-//     .populate('share')
-//     .then((comment) => {
-//       res.json(comment);
-//     }) // read all comments
-// })
-// router.get('/title/:id', (req, res) => {
-//     Comment.findOne({id:req.params.id})
-//     .populate('user')
-//     .populate('share')
-// 	.then((comment) => {
-// 	    res.json(comment)
-//  	}) // read individual comment
-// })
-// router.put('/title/:id', (req, res) => {
-//     Comment.findOne({id:req.params.id})
-//     .then((comment) => {
-//         var data = req.body
-//         Object.assign(comment, data)
-//         return comment.save()
-//     })
-//     .then((comment) => {
-//         return res.json(comment)
-//     }) // update comment data
-// })
-// router.delete('/title/:id', (req, res) => {
-//     Comment.deleteOne({id: req.params.id})
-//     .then(() =>  {
-//         res.json('deleted')
-//     }) // delete a comment 
-// })
-
 
 //User C.R.U.D
 router.get('/users', (req, res) => {
@@ -179,18 +132,18 @@ router.post('/users/authenticate', (req, res) => {
   })
 })
 
-// router.post('/upload', (req, res) => {
+router.post('/upload', (req, res) => {
 
-//   var files = Object.values(req.files)
-//   var uploadedFile = files[0]
+  var files = Object.values(req.files)
+  var uploadedFile = files[0]
 
-//   var newName = Date.now() + uploadedFile.name
+  var newName = Date.now() + uploadedFile.name
 
-//   uploadedFile.mv('public/'+ newName, function(){
-//       res.send(newName)
-//   })
+  uploadedFile.mv('public/'+ newName, function(){
+      res.send(newName)
+  })
   
-// })
+})
 
 
 // router.get('/users', (req, res) => {
